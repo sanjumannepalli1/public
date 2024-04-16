@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Mad Lib</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: inline-block;
+      width: 150px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: calc(100% - 160px);
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      display: block;
+      margin-top: 10px;
+      padding: 8px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Mad Lib</h1>
+  <hr>
+
+  <h2>Mad Lib Instructions</h2>
+  <form id="mad-lib-form">
+    <div class="form-group">
+      <label for="plural-noun">Plural Noun:</label>
+      <input id="plural-noun" type="text">
+    </div>
+    <div class="form-group">
+      <label for="adjective">Adjective:</label>
+      <input id="adjective" type="text">
+    </div>
+    <div class="form-group">
+      <label for="verb">Present Tense Verb:</label>
+      <input id="verb" type="text">
+    </div>
+    <div class="form-group">
+      <label for="noun">Noun:</label>
+      <input id="noun" type="text">
+    </div>
+    <div class="form-group">
+      <label for="conjunction">Conjunction:</label>
+      <input id="conjunction" type="text">
+    </div>
+    <button id="mad-lib-btn">Submit</button>
+  </form>
+  <hr>
+
+  <h2>Mad Lib Results</h2>
+  <p id="result"></p>
+
+
+  <div addendum>
+    <ul>
+        <li>
+            Event Listener for DOMContentLoaded:
+            This event listener ensures that the JavaScript code inside it only executes when the DOM (Document Object Model) has been fully loaded, meaning all HTML content, including images and scripts, has been parsed and rendered.
+        </li>
+        <li>
+            Variables:
+            These lines define variables that store references to various elements in the HTML document. They use document.getElementById() to get references to specific elements based on their IDs. These references are later used to interact with those elements.
+        </li>
+        <li>
+            Form Submission Event Listener:
+            This event listener is attached to the form element (mad-lib-form). It listens for the 'submit' event, which occurs when the user submits the form.
+event.preventDefault() is called to prevent the default form submission behavior, which would cause the page to reload.
+        </li>
+        <li>
+            Form Data Retrieval and Fetch Request:
+            This code creates an object named formData that contains the values of various input fields in the form. These values are retrieved using the value property of each input element.
+        </li>
+        <li>
+            Handling Fetch Response:
+            These lines handle the response from the fetch request.
+response.text() parses the response body as text.
+The resolved promise returns the data received from the server, which is then used to update the content of an element (resultOutput) to display the Mad Lib story.
+        </li>
+    </ul>
+  </div>
+  <footer>
+    <p class="footer-text">Last updated: <span id="lastModified"></span></p>
+  </footer>
+  <script type="text/javascript">
+    var x = document.lastModified;
+    document.getElementById('lastModified').textContent = x;
+  </script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
